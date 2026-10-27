@@ -1,678 +1,772 @@
 <script setup>
-  import { ArrowDownRight, ArrowUpRight, Boxes, GraduationCap, Headphones } from 'lucide-vue-next';
+import { ArrowDownRight, ArrowUpRight, Boxes, GraduationCap, Headphones } from 'lucide-vue-next';
 
-  import SectionLabel from '@/components/SectionLabel.vue';
-
-  defineEmits(['go-to']);
+defineEmits(['go-to']);
 </script>
 
 <template>
-  <section class="home" id="home">
-    <div class="hero">
-      <!-- TOP META -->
-      <div class="hero-meta">
-        <div class="meta-left">
-          <SectionLabel number="00" title="Business Technology" />
-        </div>
+	<section id="home" class="home">
+		<div class="home-container">
+			<!-- Top identity -->
+			<div class="topbar">
+				<div class="brand-line">
+					<span class="brand-mark"></span>
+					<span>SOFTBOX INFOTECH SOLUTIONS LTD</span>
+				</div>
 
-        <div class="meta-right">
-          <span>PORT HARCOURT / NIGERIA</span>
-          <span class="meta-status">
-            <i></i>
-            AVAILABLE FOR PROJECTS
-          </span>
-        </div>
-      </div>
+				<span class="location">PORT HARCOURT · NIGERIA</span>
+			</div>
 
-      <!-- HERO CONTENT -->
-      <div class="hero-content">
-        <div class="hero-title">
-          <div class="eyebrow">
-            <span>SOFTBOX INFOTECH SOLUTIONS LTD</span>
-            <span>EST. / BUSINESS SYSTEMS</span>
-          </div>
+			<!-- Main hero -->
+			<div class="hero">
+				<!-- Left -->
+				<div class="hero-left">
+					<span class="hero-number">01</span>
 
-          <h1>
-            Technology
-            <span>for better</span>
-            business.
-          </h1>
+					<div class="hero-copy">
+						<p class="eyebrow">BUSINESS TECHNOLOGY CONSULTANCY</p>
 
-          <div class="hero-index">
-            <span>00 / 04</span>
-            <span>BUSINESS TECHNOLOGY</span>
-          </div>
-        </div>
+						<h1>
+							Make your
+							<span>business work</span>
+							better.
+						</h1>
 
-        <div class="hero-side">
-          <div class="side-line"></div>
+						<p class="intro">The right software. The right systems. The right people to keep your business moving.</p>
 
-          <p>Business management software, practical training and dependable technical support for modern organisations.
-          </p>
+						<div class="actions">
+							<button type="button" class="primary-action" @click="$emit('go-to', 'solutions')">
+								<span>Explore solutions</span>
+								<ArrowUpRight :size="18" />
+							</button>
 
-          <button class="hero-button" type="button" @click="$emit('go-to', 'solutions')">
-            <span>Explore solutions</span>
+							<button type="button" class="text-action" @click="$emit('go-to', 'about')">
+								<span>About Softbox</span>
+								<ArrowDownRight :size="17" />
+							</button>
+						</div>
+					</div>
+				</div>
 
-            <ArrowUpRight :size="18" :stroke-width="1.4" />
-          </button>
-        </div>
-      </div>
+				<!-- Right -->
+				<div class="hero-right">
+					<div class="system-panel">
+						<div class="panel-top">
+							<span>SOFTBOX / 01</span>
+							<span>BUSINESS SYSTEMS</span>
+						</div>
 
-      <!-- SERVICES -->
-      <div class="hero-services">
-        <!-- BUSINESS SOLUTIONS -->
-        <button type="button" @click="$emit('go-to', 'solutions')">
-          <span class="service-number">01</span>
+						<div class="panel-main">
+							<div class="panel-icon">
+								<Boxes :size="42" :stroke-width="1.1" />
+							</div>
 
-          <div class="service-icon">
-            <Boxes :size="24" :stroke-width="1.1" />
-          </div>
+							<div>
+								<span class="panel-label">WHAT WE DO</span>
 
-          <div class="service-content">
-            <span>BUSINESS SYSTEMS</span>
+								<h2>
+									Technology
+									<br />
+									that fits
+									<strong>your business.</strong>
+								</h2>
+							</div>
+						</div>
 
-            <strong> Business Solutions </strong>
-          </div>
+						<div class="panel-list">
+							<div>
+								<span>01</span>
+								<p>Business software</p>
+							</div>
 
-          <ArrowUpRight class="service-arrow" :size="19" :stroke-width="1.3" />
-        </button>
+							<div>
+								<span>02</span>
+								<p>Implementation & training</p>
+							</div>
 
-        <!-- TRAINING -->
-        <button type="button" @click="$emit('go-to', 'services')">
-          <span class="service-number">02</span>
+							<div>
+								<span>03</span>
+								<p>Ongoing support</p>
+							</div>
 
-          <div class="service-icon">
-            <GraduationCap :size="24" :stroke-width="1.1" />
-          </div>
+							<div>
+								<span>04</span>
+								<p>Finance & procurement talent</p>
+							</div>
+						</div>
 
-          <div class="service-content">
-            <span>PEOPLE / DEVELOPMENT</span>
+						<div class="panel-bottom">
+							<span>SOFTWARE</span>
+							<span>PEOPLE</span>
+							<span>SUPPORT</span>
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <strong> Training & Mentorship </strong>
-          </div>
+			<!-- Services -->
+			<div class="services">
+				<button type="button" @click="$emit('go-to', 'solutions')">
+					<div class="service-icon">
+						<Boxes :size="19" :stroke-width="1.4" />
+					</div>
 
-          <ArrowUpRight class="service-arrow" :size="19" :stroke-width="1.3" />
-        </button>
+					<div class="service-content">
+						<small>01</small>
+						<span>Business Solutions</span>
+					</div>
 
-        <!-- SUPPORT -->
-        <button type="button" @click="$emit('go-to', 'services')">
-          <span class="service-number">03</span>
+					<ArrowUpRight :size="16" />
+				</button>
 
-          <div class="service-icon">
-            <Headphones :size="24" :stroke-width="1.1" />
-          </div>
+				<button type="button" @click="$emit('go-to', 'services')">
+					<div class="service-icon">
+						<GraduationCap :size="19" :stroke-width="1.4" />
+					</div>
 
-          <div class="service-content">
-            <span>TECHNICAL / SUPPORT</span>
+					<div class="service-content">
+						<small>02</small>
+						<span>Training & Mentorship</span>
+					</div>
 
-            <strong> Support & Maintenance </strong>
-          </div>
+					<ArrowUpRight :size="16" />
+				</button>
 
-          <ArrowUpRight class="service-arrow" :size="19" :stroke-width="1.3" />
-        </button>
-      </div>
+				<button type="button" @click="$emit('go-to', 'services')">
+					<div class="service-icon">
+						<Headphones :size="19" :stroke-width="1.4" />
+					</div>
 
-      <!-- BOTTOM -->
-      <div class="hero-bottom">
-        <button class="scroll" type="button" @click="$emit('go-to', 'about')">
-          <span>SCROLL TO DISCOVER</span>
+					<div class="service-content">
+						<small>03</small>
+						<span>Support & Maintenance</span>
+					</div>
 
-          <ArrowDownRight :size="17" :stroke-width="1.3" />
-        </button>
+					<ArrowUpRight :size="16" />
+				</button>
+			</div>
 
-        <span class="hero-location"> BUSINESS / SOFTWARE / SUPPORT </span>
-      </div>
-    </div>
-  </section>
+			<!-- Bottom -->
+			<div class="bottom-line">
+				<button type="button" @click="$emit('go-to', 'about')">
+					<span>SCROLL TO DISCOVER</span>
+					<ArrowDownRight :size="15" />
+				</button>
+
+				<span>EST. / BUSINESS SYSTEMS</span>
+
+				<span>© SOFTBOX</span>
+			</div>
+		</div>
+	</section>
 </template>
 
 <style scoped>
+.home {
+	min-height: 100svh;
+	background: var(--bg);
+	color: var(--text);
+	border-bottom: 1px solid var(--border);
+}
 
-  /* =====================================================
-   HOME
-===================================================== */
-  .home {
-    position: relative;
-    min-height: 100svh;
-    background: linear-gradient(90deg, transparent 0, transparent calc(100% - 1px), rgba(255, 255, 255, 0.025) calc(100% - 1px)), var(--black);
-    overflow: hidden;
-  }
+.home-container {
+	width: min(calc(100% - (var(--page-padding) * 2)), var(--container));
 
-  /* =====================================================
-   TECHNICAL GRID
-===================================================== */
-  .home::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-    background-size: 80px 80px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 90%);
-    pointer-events: none;
-  }
+	min-height: 100svh;
+	margin: 0 auto;
 
-  /* vertical technical line */
-  .home::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: calc(50% + min(690px, 45vw));
-    width: 1px;
-    background: rgba(255, 255, 255, 0.045);
-    pointer-events: none;
-  }
+	display: flex;
+	flex-direction: column;
+}
 
-  /* =====================================================
+/* ================================
+   TOP BAR
+================================ */
+
+.topbar {
+	height: calc(var(--header-height) + 2rem);
+
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+
+	padding-bottom: 1rem;
+
+	border-bottom: 1px solid var(--border);
+
+	font-size: 0.65rem;
+	font-weight: 650;
+	letter-spacing: 0.12em;
+}
+
+.brand-line {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+
+	color: var(--accent);
+}
+
+.brand-mark {
+	width: 7px;
+	height: 7px;
+
+	display: block;
+
+	background: var(--accent);
+}
+
+.location {
+	color: var(--text-muted);
+}
+
+/* ================================
    HERO
-===================================================== */
-  .hero {
-    position: relative;
-    z-index: 1;
-    width: min(calc(100% - (var(--page-padding) * 2)), var(--container));
-    min-height: 100svh;
-    margin-inline: auto;
-    padding: calc(var(--header-height) + 2rem) 0 1.5rem;
-    display: flex;
-    flex-direction: column;
-  }
+================================ */
 
-  /* =====================================================
-   META
-===================================================== */
-  .hero-meta {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    min-height: 55px;
-  }
+.hero {
+	flex: 1;
 
-  .meta-right {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding-top: 0.35rem;
-  }
+	display: grid;
+	grid-template-columns: 1.15fr 0.85fr;
 
-  .meta-right > span {
-    color: var(--grey);
-    font-size: 0.58rem;
-    letter-spacing: 0.14em;
-  }
+	min-height: 0;
+}
 
-  .meta-status {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--green) !important;
-  }
+/* ================================
+   LEFT
+================================ */
 
-  .meta-status i {
-    display: block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--green);
-    box-shadow: 0 0 10px rgba(57, 245, 154, 0.45);
-  }
+.hero-left {
+	position: relative;
 
-  /* =====================================================
-   MAIN CONTENT
-===================================================== */
-  .hero-content {
-    position: relative;
-    flex: 1;
-    display: grid;
-    grid-template-columns: minmax(0, 1.8fr) minmax(260px, 0.55fr);
-    align-items: center;
-    gap: clamp(3rem, 7vw, 8rem);
-    padding: 4rem 0 3rem;
-  }
+	display: flex;
+	align-items: center;
 
-  /* =====================================================
-   BACKGROUND NUMBER
-===================================================== */
-  .hero-content::before {
-    content: '00';
-    position: absolute;
-    right: -1rem;
-    top: 50%;
-    transform: translateY(-52%);
-    color: rgba(255, 255, 255, 0.025);
-    font-size: clamp(14rem, 32vw, 32rem);
-    font-weight: 700;
-    line-height: 0.7;
-    letter-spacing: -0.1em;
-    pointer-events: none;
-    user-select: none;
-  }
+	padding: 3.5rem clamp(2rem, 5vw, 6rem) 3.5rem 0;
 
-  /* =====================================================
-   TITLE
-===================================================== */
-  .hero-title {
-    position: relative;
-    z-index: 1;
-  }
+	border-right: 1px solid var(--border);
+}
 
-  .eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin: 0 0 1.75rem;
-    color: var(--green);
-    font-size: 0.6rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-  }
+.hero-number {
+	position: absolute;
+	top: 2rem;
+	left: 0;
 
-  .eyebrow span:last-child {
-    color: var(--grey-dark);
-  }
+	color: var(--text-muted);
 
-  .hero-title h1 {
-    max-width: 1050px;
-    margin: 0;
-    color: var(--white);
-    font-size: clamp(4rem, 9.2vw, 9.5rem);
-    font-weight: 500;
-    line-height: 0.82;
-    letter-spacing: -0.075em;
-    text-transform: uppercase;
-  }
+	font-size: 0.65rem;
+	font-weight: 650;
+	letter-spacing: 0.1em;
+}
 
-  .hero-title h1 span {
-    display: block;
-    color: var(--green);
-  }
+.hero-copy {
+	max-width: 780px;
+}
 
-  /* index */
-  .hero-index {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    margin-top: 2rem;
-  }
+.eyebrow {
+	margin: 0 0 1.2rem;
 
-  .hero-index span {
-    color: var(--grey-dark);
-    font-size: 0.55rem;
-    letter-spacing: 0.15em;
-  }
+	color: var(--text-muted);
 
-  .hero-index span:first-child {
-    color: var(--yellow);
-  }
+	font-size: 0.65rem;
+	font-weight: 650;
 
-  /* =====================================================
-   HERO SIDE
-===================================================== */
-  .hero-side {
-    position: relative;
-    z-index: 1;
-    max-width: 360px;
-    justify-self: end;
-    padding-bottom: 1rem;
-  }
+	letter-spacing: 0.13em;
+}
 
-  .side-line {
-    width: 40px;
-    height: 1px;
-    margin-bottom: 1.5rem;
-    background: var(--yellow);
-  }
+.hero h1 {
+	margin: 0;
 
-  .hero-side p {
-    max-width: 340px;
-    margin: 0 0 2rem;
-    color: var(--grey);
-    font-size: 0.9rem;
-    line-height: 1.75;
-  }
+	font-size: clamp(4rem, 6.8vw, 7.5rem);
+	font-weight: 700;
 
-  /* button */
-  .hero-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.9rem 1.2rem;
-    border: 1px solid var(--green);
-    border-radius: 0;
-    background: transparent;
-    color: var(--green);
-    font: inherit;
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition:
-      background 0.3s ease,
-      color 0.3s ease;
-  }
+	line-height: 0.9;
+	letter-spacing: -0.065em;
+}
 
-  .hero-button svg {
-    transition: transform 0.3s ease;
-  }
+.hero h1 span {
+	display: block;
+	color: var(--accent);
+}
 
-  .hero-button:hover {
-    background: var(--green);
-    color: var(--black);
-  }
+.intro {
+	max-width: 480px;
 
-  .hero-button:hover svg {
-    transform: translate(4px, -4px);
-  }
+	margin: 1.8rem 0 0;
 
-  /* =====================================================
+	color: var(--text-secondary);
+
+	font-size: 1rem;
+	line-height: 1.65;
+}
+
+/* ================================
+   ACTIONS
+================================ */
+
+.actions {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+
+	margin-top: 2rem;
+}
+
+.primary-action {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.8rem;
+
+	padding: 0.85rem 1rem;
+
+	border: 1px solid var(--text);
+
+	background: var(--text);
+	color: var(--text-inverse);
+
+	font: inherit;
+
+	font-size: 0.68rem;
+	font-weight: 650;
+
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+
+	cursor: pointer;
+
+	transition:
+		background 180ms ease,
+		border-color 180ms ease;
+}
+
+.primary-action:hover {
+	background: var(--accent);
+	border-color: var(--accent);
+}
+
+.text-action {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+
+	padding: 0;
+
+	border: 0;
+
+	background: transparent;
+	color: var(--text-secondary);
+
+	font: inherit;
+
+	font-size: 0.7rem;
+	font-weight: 600;
+
+	cursor: pointer;
+}
+
+.text-action:hover {
+	color: var(--text);
+}
+
+/* ================================
+   RIGHT PANEL
+================================ */
+
+.hero-right {
+	display: flex;
+	align-items: center;
+
+	padding: 2rem clamp(1.5rem, 4vw, 4rem);
+}
+
+.system-panel {
+	width: 100%;
+
+	border: 1px solid var(--border-strong);
+
+	background: var(--bg-secondary);
+}
+
+/* panel top */
+
+.panel-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 0.85rem 1rem;
+
+	border-bottom: 1px solid var(--border);
+
+	color: var(--text-muted);
+
+	font-size: 0.58rem;
+	font-weight: 650;
+	letter-spacing: 0.1em;
+}
+
+/* panel main */
+
+.panel-main {
+	display: grid;
+	grid-template-columns: 70px 1fr;
+	gap: 1.5rem;
+
+	padding: 2rem 1.5rem;
+
+	border-bottom: 1px solid var(--border);
+}
+
+.panel-icon {
+	width: 58px;
+	height: 58px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border: 1px solid var(--border);
+
+	color: var(--accent);
+
+	background: var(--bg);
+}
+
+.panel-label {
+	display: block;
+
+	margin-bottom: 0.7rem;
+
+	color: var(--text-muted);
+
+	font-size: 0.58rem;
+	font-weight: 650;
+	letter-spacing: 0.1em;
+}
+
+.panel-main h2 {
+	margin: 0;
+
+	font-size: clamp(1.7rem, 2.5vw, 2.6rem);
+	font-weight: 650;
+
+	line-height: 1;
+	letter-spacing: -0.045em;
+}
+
+.panel-main h2 strong {
+	display: block;
+	color: var(--accent);
+	font-weight: inherit;
+}
+
+/* panel list */
+
+.panel-list > div {
+	display: grid;
+	grid-template-columns: 35px 1fr;
+
+	align-items: center;
+
+	min-height: 48px;
+
+	padding: 0 1.5rem;
+
+	border-bottom: 1px solid var(--border);
+}
+
+.panel-list span {
+	color: var(--text-muted);
+
+	font-size: 0.58rem;
+	font-weight: 650;
+}
+
+.panel-list p {
+	margin: 0;
+
+	font-size: 0.82rem;
+	font-weight: 550;
+}
+
+/* panel bottom */
+
+.panel-bottom {
+	display: flex;
+	justify-content: space-between;
+
+	padding: 0.85rem 1rem;
+
+	color: var(--text-muted);
+
+	font-size: 0.55rem;
+	font-weight: 650;
+
+	letter-spacing: 0.1em;
+}
+
+/* ================================
    SERVICES
-===================================================== */
-  .hero-services {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid var(--border);
-    border-left: 1px solid var(--border);
-  }
+================================ */
 
-  .hero-services button {
-    position: relative;
-    min-height: 125px;
-    padding: 1.25rem 1.4rem;
-    border: 0;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    background: rgba(5, 5, 5, 0.75);
-    color: var(--white);
-    display: grid;
-    grid-template-columns: 30px 45px 1fr 25px;
-    align-items: center;
-    gap: 0.75rem;
-    text-align: left;
-    cursor: pointer;
-    transition:
-      background 0.35s ease,
-      color 0.35s ease,
-      padding 0.35s ease;
-  }
+.services {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
 
-  .hero-services button::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background: var(--green);
-    transition: width 0.35s ease;
-  }
+	border-top: 1px solid var(--border);
+	border-left: 1px solid var(--border);
+}
 
-  .hero-services button:nth-child(2)::before {
-    background: var(--yellow);
-  }
+.services button {
+	display: grid;
+	grid-template-columns: 28px 1fr 18px;
 
-  .hero-services button:hover {
-    background: var(--green);
-    color: var(--black);
-    padding-left: 1.8rem;
-  }
+	align-items: center;
+	gap: 0.8rem;
 
-  .hero-services button:nth-child(2):hover {
-    background: var(--yellow);
-  }
+	min-height: 70px;
 
-  .hero-services button:hover::before {
-    width: 100%;
-  }
+	padding: 0.75rem 1rem;
 
-  /* service number */
-  .service-number {
-    align-self: start;
-    padding-top: 0.2rem;
-    color: var(--grey-dark);
-    font-size: 0.58rem;
-    letter-spacing: 0.1em;
-  }
+	border: 0;
+	border-right: 1px solid var(--border);
+	border-bottom: 1px solid var(--border);
 
-  .hero-services button:hover .service-number {
-    color: rgba(0, 0, 0, 0.55);
-  }
+	background: var(--bg);
 
-  /* icon */
-  .service-icon {
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    border: 1px solid var(--border-light);
-    color: var(--green);
-    transition:
-      border-color 0.3s ease,
-      color 0.3s ease;
-  }
+	color: var(--text);
 
-  .hero-services button:nth-child(2) .service-icon {
-    color: var(--yellow);
-  }
+	text-align: left;
 
-  .hero-services button:hover .service-icon {
-    border-color: rgba(0, 0, 0, 0.3);
-    color: var(--black) !important;
-  }
+	cursor: pointer;
 
-  /* service content */
-  .service-content {
-    min-width: 0;
-  }
+	transition:
+		background 180ms ease,
+		color 180ms ease;
+}
 
-  .service-content > span {
-    display: block;
-    margin-bottom: 0.35rem;
-    color: var(--grey-dark);
-    font-size: 0.52rem;
-    letter-spacing: 0.13em;
-  }
+.services button:hover {
+	background: var(--bg-dark);
+	color: var(--text-inverse);
+}
 
-  .service-content strong {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 500;
-    line-height: 1.2;
-  }
+.service-icon {
+	color: var(--accent);
+}
 
-  .hero-services button:hover .service-content > span {
-    color: rgba(0, 0, 0, 0.55);
-  }
+.service-content {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+}
 
-  /* arrow */
-  .service-arrow {
-    color: var(--yellow);
-    transition:
-      transform 0.3s ease,
-      color 0.3s ease;
-  }
+.service-content small {
+	color: var(--text-muted);
 
-  .hero-services button:hover .service-arrow {
-    color: var(--black);
-    transform: translate(4px, -4px);
-  }
+	font-size: 0.55rem;
+	font-weight: 650;
+}
 
-  /* =====================================================
-   BOTTOM
-===================================================== */
-  .hero-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 1rem;
-  }
+.service-content span {
+	font-size: 0.85rem;
+	font-weight: 600;
+}
 
-  .scroll {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    color: var(--grey);
-    font: inherit;
-    font-size: 0.55rem;
-    letter-spacing: 0.14em;
-    cursor: pointer;
-  }
+.services button > svg {
+	color: var(--text-muted);
+}
 
-  .scroll svg {
-    color: var(--yellow);
-    transition: transform 0.3s ease;
-  }
+.services button:hover > svg {
+	color: var(--accent);
+}
 
-  .scroll:hover {
-    color: var(--white);
-  }
+/* ================================
+   BOTTOM LINE
+================================ */
 
-  .scroll:hover svg {
-    transform: translate(4px, 4px);
-  }
+.bottom-line {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 
-  .hero-location {
-    color: var(--grey-dark);
-    font-size: 0.52rem;
-    letter-spacing: 0.14em;
-  }
+	align-items: center;
 
-  /* =====================================================
+	padding: 0.75rem 0;
+
+	color: var(--text-muted);
+
+	font-size: 0.55rem;
+	font-weight: 650;
+
+	letter-spacing: 0.11em;
+}
+
+.bottom-line > span:nth-child(2) {
+	text-align: center;
+}
+
+.bottom-line > span:last-child {
+	text-align: right;
+}
+
+.bottom-line button {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+
+	width: fit-content;
+
+	padding: 0;
+
+	border: 0;
+
+	background: transparent;
+	color: var(--text-secondary);
+
+	font: inherit;
+	font-size: inherit;
+
+	letter-spacing: inherit;
+
+	cursor: pointer;
+}
+
+.bottom-line button svg {
+	color: var(--accent);
+}
+
+.bottom-line button:hover {
+	color: var(--text);
+}
+
+/* ================================
    TABLET
-===================================================== */
-  @media (max-width: 1000px) {
-    .hero-content {
-      grid-template-columns: 1fr 0.5fr;
-      gap: 3rem;
-    }
+================================ */
 
-    .hero-title h1 {
-      font-size: clamp(4rem, 9vw, 7rem);
-    }
+@media (max-width: 900px) {
+	.hero {
+		grid-template-columns: 1fr;
+	}
 
-    .hero-services button {
-      grid-template-columns: 28px 40px 1fr 20px;
-      padding-inline: 1rem;
-    }
-  }
+	.hero-left {
+		padding: 3.5rem 0 3rem;
 
-  /* =====================================================
-   SMALL TABLET
-===================================================== */
-  @media (max-width: 850px) {
-    .hero {
-      padding-top: calc(var(--header-height) + 1.5rem);
-    }
+		border-right: 0;
+		border-bottom: 1px solid var(--border);
+	}
 
-    .meta-status {
-      display: none;
-    }
+	.hero-number {
+		top: 1.5rem;
+	}
 
-    .hero-content {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-      padding-top: 5rem;
-    }
+	.hero-right {
+		padding: 2rem 0;
+	}
 
-    .hero-content::before {
-      right: -1rem;
-      top: 35%;
-      font-size: 15rem;
-    }
+	.system-panel {
+		max-width: 650px;
+	}
+}
 
-    .hero-side {
-      justify-self: start;
-      max-width: 520px;
-    }
-
-    .hero-services {
-      grid-template-columns: 1fr;
-    }
-
-    .hero-services button {
-      min-height: 100px;
-    }
-  }
-
-  /* =====================================================
+/* ================================
    MOBILE
-===================================================== */
-  @media (max-width: 600px) {
-    .hero {
-      width: min(calc(100% - (var(--page-padding) * 2)), var(--container));
-      padding-bottom: 1rem;
-    }
+================================ */
 
-    .hero-meta {
-      min-height: 45px;
-    }
+@media (max-width: 600px) {
+	.topbar {
+		height: calc(var(--header-height) + 1rem);
 
-    .hero-meta .meta-left {
-      width: 100%;
-    }
+		align-items: flex-end;
+	}
 
-    .hero-meta .meta-left :deep(.section-label) {
-      width: 100%;
-    }
+	.location {
+		display: none;
+	}
 
-    .hero-content {
-      padding-top: 4rem;
-    }
+	.brand-line {
+		font-size: 0.6rem;
+	}
 
-    .eyebrow {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
+	.hero-left {
+		padding: 3rem 0 2.5rem;
+	}
 
-    .hero-title h1 {
-      font-size: clamp(3.3rem, 16vw, 5.4rem);
-      line-height: 0.84;
-    }
+	.hero-number {
+		top: 1.2rem;
+	}
 
-    .hero-content::before {
-      top: 32%;
-      font-size: 11rem;
-    }
+	.eyebrow {
+		font-size: 0.6rem;
+	}
 
-    .hero-index {
-      margin-top: 1.5rem;
-    }
+	.hero h1 {
+		font-size: clamp(3.3rem, 15vw, 5rem);
+	}
 
-    .hero-side p {
-      font-size: 0.82rem;
-    }
+	.intro {
+		margin-top: 1.5rem;
+		font-size: 0.95rem;
+	}
 
-    .hero-services button {
-      grid-template-columns: 25px 42px 1fr 20px;
-      min-height: 88px;
-      padding: 1rem;
-    }
+	.actions {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 1rem;
+	}
 
-    .service-icon {
-      width: 38px;
-      height: 38px;
-    }
+	.primary-action {
+		width: 100%;
+		justify-content: space-between;
+	}
 
-    .service-content strong {
-      font-size: 0.78rem;
-    }
+	.text-action {
+		width: fit-content;
+	}
 
-    .service-content > span {
-      font-size: 0.48rem;
-    }
+	.hero-right {
+		padding: 1.5rem 0;
+	}
 
-    .hero-location {
-      display: none;
-    }
+	.panel-main {
+		grid-template-columns: 50px 1fr;
+		gap: 1rem;
 
-    .hero-bottom {
-      padding-top: 1rem;
-    }
-  }
+		padding: 1.5rem 1rem;
+	}
+
+	.panel-icon {
+		width: 44px;
+		height: 44px;
+	}
+
+	.panel-icon svg {
+		width: 28px;
+	}
+
+	.panel-main h2 {
+		font-size: 1.65rem;
+	}
+
+	.panel-list > div {
+		min-height: 45px;
+		padding: 0 1rem;
+	}
+
+	.services {
+		grid-template-columns: 1fr;
+	}
+
+	.services button {
+		min-height: 66px;
+	}
+
+	.bottom-line {
+		grid-template-columns: 1fr;
+		gap: 0.6rem;
+	}
+
+	.bottom-line > span {
+		display: none;
+	}
+}
 </style>
