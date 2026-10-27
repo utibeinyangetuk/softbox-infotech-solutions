@@ -1,7 +1,7 @@
 <script setup>
 import SectionLabel from '@/components/SectionLabel.vue';
 import SoftwarePlatforms from '@/components/SoftwarePlatforms.vue';
-import { Boxes, Calculator, PackageSearch, ShoppingBasket, UsersRound } from 'lucide-vue-next';
+import { ArrowUpRight, Boxes, Calculator, PackageSearch, ShoppingBasket, UsersRound } from 'lucide-vue-next';
 const solutions = [
 	{
 		number: '01',
@@ -41,36 +41,31 @@ const solutions = [
 ];
 </script>
 <template>
-	<section id="solutions" class="solutions site-section">
-		<div class="section-inner">
-			<!-- =================================================
-			     SECTION INTRO
-			================================================== -->
-			<div class="solutions-header">
+	<section id="solutions" class="solutions">
+		<div class="solutions-container">
+			<!-- INTRO -->
+			<div class="solutions-intro">
 				<div class="solutions-label">
 					<SectionLabel number="02" title="Business Solutions" accent="blue" />
-					<span class="label-meta"> SOFTWARE / OPERATIONS / MANAGEMENT </span>
 				</div>
 				<div class="solutions-heading">
-					<p class="heading-kicker">BUSINESS SYSTEMS</p>
+					<span class="heading-kicker">BUSINESS SYSTEMS</span>
 					<h2>
 						Technology
 						<span>that works.</span>
 					</h2>
-					<p class="intro">The right business software should do more than store information. It should help your people work better, give you greater visibility and make everyday decisions easier.</p>
+					<p>The right business software should do more than store information. It should help your people work better, give you greater visibility and make everyday decisions easier.</p>
 				</div>
 			</div>
-			<!-- =================================================
-			     SOLUTION LIST
-			================================================== -->
+			<!-- SOLUTIONS -->
 			<div class="solution-list">
 				<article v-for="solution in solutions" :key="solution.number" class="solution-item">
 					<div class="solution-number">
 						{{ solution.number }}
 					</div>
-					<div class="solution-main">
-						<div class="solution-title-row">
-							<div class="solution-title">
+					<div class="solution-content">
+						<div class="solution-main">
+							<div>
 								<span class="solution-category">
 									{{ solution.shortName }}
 								</span>
@@ -79,110 +74,116 @@ const solutions = [
 								</h3>
 							</div>
 							<div class="solution-icon">
-								<component :is="solution.icon" :size="25" :stroke-width="1.5" />
+								<component :is="solution.icon" :size="21" :stroke-width="1.6" />
 							</div>
 						</div>
-						<p class="solution-description">
+						<p>
 							{{ solution.description }}
 						</p>
 					</div>
 				</article>
 			</div>
-			<!-- =================================================
-			     SOFTWARE PLATFORMS
-			================================================== -->
+			<!-- SOFTWARE PLATFORMS -->
 			<div class="platform-area">
 				<SoftwarePlatforms />
+			</div>
+			<!-- CLOSING -->
+			<div class="solutions-bottom">
+				<div>
+					<span>OUR APPROACH</span>
+					<h3>
+						Good software is not about having more tools.
+						<span>It is about having the right ones.</span>
+					</h3>
+				</div>
+				<ArrowUpRight class="bottom-arrow" :size="22" :stroke-width="1.5" />
 			</div>
 		</div>
 	</section>
 </template>
 <style scoped>
-/* =========================================================
+/* ========================================
    SOLUTIONS
-========================================================= */
+======================================== */
 .solutions {
 	background: var(--bg);
 	color: var(--text);
-}
-/* =========================================================
-   HEADER
-========================================================= */
-.solutions-header {
-	display: grid;
-	grid-template-columns: 180px minmax(0, 1fr);
-	gap: 3.5rem;
-	padding: 5rem 0 4rem;
 	border-bottom: 1px solid var(--border);
 }
-.solutions-label {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+.solutions-container {
+	width: min(100%, var(--container));
+	margin: 0 auto;
+	padding: clamp(4rem, 6vw, 5.5rem) var(--page-padding);
 }
-.label-meta {
-	max-width: 130px;
-	color: var(--text-muted);
-	font-size: 0.58rem;
-	font-weight: 650;
-	line-height: 1.6;
-	letter-spacing: 0.12em;
+/* ========================================
+   INTRO
+======================================== */
+.solutions-intro {
+	display: grid;
+	grid-template-columns: 120px minmax(0, 1fr);
+	gap: clamp(2rem, 4vw, 4rem);
+	padding-bottom: 3.5rem;
+	border-bottom: 1px solid var(--border);
 }
 .solutions-heading {
 	max-width: 850px;
 }
 .heading-kicker {
-	margin: 0 0 1rem;
+	display: block;
+	margin-bottom: 0.9rem;
 	color: var(--accent);
 	font-size: 0.62rem;
-	font-weight: 700;
-	letter-spacing: 0.16em;
+	font-weight: 650;
+	letter-spacing: 0.14em;
 }
 .solutions-heading h2 {
 	margin: 0;
-	font-size: clamp(3.2rem, 6vw, 6.2rem);
-	font-weight: 600;
-	line-height: 0.92;
-	letter-spacing: -0.065em;
+	color: var(--text);
+	font-size: clamp(2.8rem, 5vw, 5rem);
+	font-weight: 650;
+	line-height: 0.97;
+	letter-spacing: -0.06em;
 }
 .solutions-heading h2 span {
 	display: block;
 	color: var(--accent);
 }
-.intro {
+.solutions-heading p {
 	max-width: 650px;
-	margin: 2rem 0 0;
+	margin: 1.4rem 0 0;
 	color: var(--text-secondary);
-	font-size: 0.95rem;
-	line-height: 1.7;
+	font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+	line-height: 1.6;
 }
-/* =========================================================
+/* ========================================
    SOLUTION LIST
-========================================================= */
+======================================== */
 .solution-list {
-	border-top: 1px solid var(--border-strong);
+	border-top: 1px solid var(--border);
 }
 .solution-item {
 	display: grid;
 	grid-template-columns: 70px minmax(0, 1fr);
 	border-bottom: 1px solid var(--border);
-	transition: background-color 0.25s ease;
+	transition: background 180ms ease;
 }
 .solution-item:hover {
 	background: var(--accent-soft);
 }
 .solution-number {
-	padding: 1.75rem 1rem;
-	color: var(--text-muted);
-	font-size: 0.65rem;
-	font-weight: 700;
-	letter-spacing: 0.1em;
+	display: flex;
+	align-items: flex-start;
+	padding: 1.45rem 1rem;
 	border-right: 1px solid var(--border);
+	color: var(--text-muted);
+	font-size: 0.62rem;
+	font-weight: 650;
+	letter-spacing: 0.08em;
+}
+.solution-content {
+	padding: 1.45rem 1.5rem 1.55rem;
 }
 .solution-main {
-	padding: 1.75rem 2rem 2rem;
-}
-.solution-title-row {
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
@@ -190,129 +191,169 @@ const solutions = [
 }
 .solution-category {
 	display: block;
-	margin-bottom: 0.55rem;
+	margin-bottom: 0.45rem;
 	color: var(--accent);
-	font-size: 0.56rem;
-	font-weight: 700;
-	letter-spacing: 0.16em;
+	font-size: 0.57rem;
+	font-weight: 650;
+	letter-spacing: 0.14em;
 }
-.solution-title h3 {
+.solution-main h3 {
 	margin: 0;
 	color: var(--text);
-	font-size: clamp(1.45rem, 2.5vw, 2.35rem);
-	font-weight: 450;
+	font-size: clamp(1.35rem, 2vw, 2rem);
+	font-weight: 600;
 	line-height: 1.05;
-	letter-spacing: -0.04em;
+	letter-spacing: -0.035em;
 }
 .solution-icon {
 	flex-shrink: 0;
 	display: grid;
 	place-items: center;
-	width: 42px;
-	height: 42px;
-	color: var(--accent);
+	width: 40px;
+	height: 40px;
 	border: 1px solid var(--border);
-	border-radius: 8px;
+	border-radius: var(--radius);
 	background: var(--bg);
+	color: var(--accent);
 	transition:
-		background-color 0.25s ease,
-		color 0.25s ease;
+		background 180ms ease,
+		border-color 180ms ease,
+		color 180ms ease;
 }
 .solution-item:hover .solution-icon {
 	background: var(--accent);
-	color: var(--text-inverse);
 	border-color: var(--accent);
+	color: var(--text-inverse);
 }
-.solution-description {
+.solution-content > p {
 	max-width: 650px;
-	margin: 1rem 0 0;
+	margin: 0.8rem 0 0;
 	color: var(--text-secondary);
-	font-size: 0.82rem;
-	line-height: 1.7;
+	font-size: 0.8rem;
+	line-height: 1.55;
 }
-/* =========================================================
-   PLATFORM AREA
-========================================================= */
+/* ========================================
+   SOFTWARE PLATFORMS
+======================================== */
 .platform-area {
-	margin-top: 5rem;
+	margin-top: 4rem;
 }
-/* =========================================================
+/* ========================================
+   CLOSING
+======================================== */
+.solutions-bottom {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 2rem;
+	margin-top: 3.5rem;
+	padding-top: 2rem;
+	border-top: 1px solid var(--border);
+}
+.solutions-bottom > div {
+	max-width: 700px;
+}
+.solutions-bottom > div > span {
+	display: block;
+	margin-bottom: 0.7rem;
+	color: var(--text-muted);
+	font-size: 0.6rem;
+	font-weight: 650;
+	letter-spacing: 0.12em;
+}
+.solutions-bottom h3 {
+	margin: 0;
+	color: var(--text);
+	font-size: clamp(1.4rem, 2.3vw, 2.2rem);
+	font-weight: 600;
+	line-height: 1.08;
+	letter-spacing: -0.04em;
+}
+.solutions-bottom h3 span {
+	display: block;
+	color: var(--text-secondary);
+}
+.bottom-arrow {
+	flex-shrink: 0;
+	color: var(--accent);
+}
+/* ========================================
    TABLET
-========================================================= */
-@media (max-width: 800px) {
-	.solutions-header {
-		grid-template-columns: 130px minmax(0, 1fr);
-		gap: 2rem;
+======================================== */
+@media (max-width: 900px) {
+	.solutions-intro {
+		grid-template-columns: 100px minmax(0, 1fr);
 	}
-	.solutions-heading h2 {
-		font-size: clamp(3rem, 8vw, 5rem);
-	}
-	.solution-main {
-		padding-right: 1.5rem;
-		padding-left: 1.5rem;
-	}
-	.platform-area {
-		margin-top: 4rem;
+	.solution-content {
+		padding-right: 1.25rem;
+		padding-left: 1.25rem;
 	}
 }
-/* =========================================================
+/* ========================================
    MOBILE
-========================================================= */
-@media (max-width: 600px) {
-	.solutions-header {
+======================================== */
+@media (max-width: 650px) {
+	.solutions-container {
+		padding-top: 3.5rem;
+		padding-bottom: 3.5rem;
+	}
+	.solutions-intro {
 		display: block;
-		padding: 3.5rem 0 3rem;
+		padding-bottom: 2.5rem;
 	}
 	.solutions-label {
-		display: block;
-	}
-	.label-meta {
-		display: block;
-		margin-top: 1.25rem;
-		max-width: none;
-	}
-	.solutions-heading {
-		margin-top: 3rem;
-	}
-	.heading-kicker {
-		margin-bottom: 0.9rem;
+		margin-bottom: 1.5rem;
 	}
 	.solutions-heading h2 {
-		font-size: clamp(2.8rem, 13vw, 4rem);
-		line-height: 0.94;
+		font-size: clamp(2.7rem, 12vw, 4rem);
+		line-height: 0.97;
 	}
-	.intro {
-		margin-top: 1.5rem;
+	.solutions-heading p {
+		margin-top: 1.2rem;
 		font-size: 0.9rem;
+		line-height: 1.6;
 	}
 	.solution-item {
 		grid-template-columns: 45px minmax(0, 1fr);
 	}
 	.solution-number {
-		padding: 1.5rem 0.7rem;
+		padding: 1.35rem 0.7rem;
+	}
+	.solution-content {
+		padding: 1.35rem 0.9rem 1.45rem;
 	}
 	.solution-main {
-		padding: 1.5rem 1rem 1.7rem;
-	}
-	.solution-title-row {
 		gap: 1rem;
 	}
-	.solution-title h3 {
-		font-size: 1.45rem;
+	.solution-category {
+		margin-bottom: 0.4rem;
+	}
+	.solution-main h3 {
+		font-size: 1.3rem;
+		line-height: 1.08;
 	}
 	.solution-icon {
 		width: 36px;
 		height: 36px;
 	}
-	.solution-description {
-		margin-top: 0.85rem;
+	.solution-content > p {
+		margin-top: 0.75rem;
 		font-size: 0.78rem;
+		line-height: 1.55;
 	}
 	.platform-area {
-		margin-top: 3.5rem;
-	}
-	.solutions-footer {
 		margin-top: 3rem;
+	}
+	.solutions-bottom {
+		align-items: flex-start;
+		margin-top: 2.75rem;
+		padding-top: 1.75rem;
+	}
+	.solutions-bottom h3 {
+		font-size: 1.45rem;
+	}
+	.bottom-arrow {
+		margin-top: 0.1rem;
 	}
 }
 </style>

@@ -22,9 +22,6 @@ const goTo = (id) => {
 <template>
 	<Transition name="menu">
 		<aside v-if="open" class="menu" aria-label="Main navigation">
-			<div class="menu-grid"></div>
-			<div class="menu-line menu-line-left"></div>
-			<div class="menu-line menu-line-right"></div>
 			<div class="menu-inner">
 				<!-- NAVIGATION -->
 				<nav class="navigation" aria-label="Site sections">
@@ -36,224 +33,182 @@ const goTo = (id) => {
 							<span class="nav-label">
 								{{ section.label }}
 							</span>
-							<ArrowUpRight :size="22" :stroke-width="1.4" aria-hidden="true" />
+							<ArrowUpRight :size="20" :stroke-width="1.5" aria-hidden="true" />
 						</button>
 					</div>
 				</nav>
 				<!-- CONTACT -->
 				<div class="menu-contact">
-					<span class="footer-label"> PORT HARCOURT · NIGERIA </span>
-					<a href="tel:08026754712"> 0802 675 4712 </a>
-					<a href="tel:07031093053"> 0703 109 3053 </a>
+					<span class="location"> PORT HARCOURT · NIGERIA </span>
+					<div class="phone-links">
+						<a href="tel:08026754712"> 0802 675 4712 </a>
+						<a href="tel:07031093053"> 0703 109 3053 </a>
+					</div>
 				</div>
 			</div>
 		</aside>
 	</Transition>
 </template>
 <style scoped>
-/* =========================================
+/* =========================================================
    MENU
-========================================= */
+   ========================================================= */
 .menu {
 	position: fixed;
 	inset: 0;
 	z-index: 900;
+	width: 100%;
+	height: 100vh;
 	background: var(--bg);
 	color: var(--text);
 	overflow-y: auto;
 }
-/* =========================================
-   TECHNICAL BACKGROUND
-========================================= */
-.menu-grid {
-	position: absolute;
-	inset: 0;
-	pointer-events: none;
-	background-image: linear-gradient(to right, rgba(17, 19, 24, 0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(17, 19, 24, 0.045) 1px, transparent 1px);
-	background-size: 80px 80px;
-}
-.menu-line {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	width: 1px;
-	background: var(--border);
-	pointer-events: none;
-}
-.menu-line-left {
-	left: var(--page-padding);
-}
-.menu-line-right {
-	right: var(--page-padding);
-}
-/* =========================================
+/* =========================================================
    INNER
-========================================= */
+   ========================================================= */
 .menu-inner {
-	min-height: 100vh;
-	padding: calc(var(--header-height) + 1rem) var(--page-padding) 2.5rem;
-	display: flex;
-	flex-direction: column;
+	width: 100%;
+	min-height: 100%;
+	padding: calc(var(--header-height) + 0.75rem) var(--page-padding) 1rem;
 }
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 .navigation {
-	margin-top: 0;
+	width: 100%;
+	border-top: 1px solid var(--border);
 }
 .nav-row {
 	display: grid;
-	grid-template-columns: clamp(4rem, 8vw, 7rem) 1fr;
+	grid-template-columns: 3.5rem 1fr;
 	align-items: center;
-	border-top: 1px solid var(--border);
-	min-height: clamp(5.5rem, 9vw, 7.5rem);
-}
-.nav-row:last-child {
+	min-height: 4.6rem;
 	border-bottom: 1px solid var(--border);
 }
 .nav-number {
-	padding-left: clamp(1rem, 2vw, 2rem);
 	color: var(--text-muted);
-	font-size: 0.75rem;
+	font-size: 0.65rem;
 	font-weight: 600;
-	letter-spacing: 0.08em;
+	letter-spacing: 0.1em;
 }
 .nav-link {
-	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	width: 100%;
+	height: 100%;
 	gap: 1rem;
-	padding: 1rem 0;
+	padding: 0;
 	border: 0;
 	background: transparent;
 	color: var(--text);
 	text-align: left;
 	cursor: pointer;
 	transition:
-		color 180ms ease,
-		padding-left 180ms ease;
+		color 0.25s ease,
+		padding-left 0.25s ease;
 }
 .nav-label {
-	font-size: clamp(2.4rem, 5vw, 4.8rem);
-	font-weight: 650;
-	line-height: 0.95;
-	letter-spacing: -0.045em;
+	font-size: clamp(1.65rem, 3vw, 2.5rem);
+	font-weight: 500;
+	line-height: 1;
+	letter-spacing: -0.035em;
 	text-transform: uppercase;
 }
 .nav-link svg {
 	flex-shrink: 0;
-	color: var(--accent);
-	transition: transform 180ms ease;
+	color: var(--text-muted);
+	transition:
+		color 0.25s ease,
+		transform 0.25s ease;
 }
 .nav-link:hover {
+	padding-left: 0.3rem;
 	color: var(--accent);
-	padding-left: 0.4rem;
 }
 .nav-link:hover svg {
+	color: var(--accent);
 	transform: translate(3px, -3px);
 }
-/* ─────────────────────────────────────────
+/* =========================================================
    CONTACT
-───────────────────────────────────────── */
+   ========================================================= */
 .menu-contact {
-	margin-top: clamp(2rem, 4vw, 3rem);
-	padding: 1.5rem;
-	border-top: 1px solid var(--border);
-	display: flex;
-	align-items: baseline;
-	gap: 2rem;
-}
-.menu-contact .footer-label {
-	margin-right: auto;
-	color: var(--text-muted);
-	font-size: 0.72rem;
-	font-weight: 600;
-	letter-spacing: 0.1em;
-}
-.menu-contact a {
-	color: var(--text);
-	font-size: 1rem;
-	font-weight: 500;
-	text-decoration: none;
-	white-space: nowrap;
-	transition: color 180ms ease;
-}
-.menu-contact a:hover {
-	color: var(--accent);
-}
-/* =========================================
-   HEADER
-========================================= */
-.menu-header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding-bottom: 1.25rem;
-	border-bottom: 1px solid var(--border);
-}
-.menu-meta {
-	display: flex;
-	align-items: center;
 	gap: 1.5rem;
-	color: var(--text-muted);
-	font-size: 0.7rem;
-	font-weight: 600;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
+	padding-top: 1rem;
 }
-.menu-meta span:first-child {
-	color: var(--accent);
-}
-.menu-index {
+.location {
 	color: var(--text-muted);
-	font-size: 0.68rem;
+	font-size: 0.62rem;
 	font-weight: 600;
 	letter-spacing: 0.1em;
+	text-transform: uppercase;
 }
-/* =========================================
+.phone-links {
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+}
+.phone-links a {
+	color: var(--text-secondary);
+	font-size: 0.78rem;
+	font-weight: 500;
+	text-decoration: none;
+	white-space: nowrap;
+	transition: color 0.2s ease;
+}
+.phone-links a:hover {
+	color: var(--accent);
+}
+/* =========================================================
    TRANSITION
-========================================= */
+   ========================================================= */
 .menu-enter-active,
 .menu-leave-active {
 	transition:
-		opacity 0.4s ease,
-		transform 0.4s var(--ease);
+		opacity 0.3s ease,
+		transform 0.3s var(--ease);
 }
 .menu-enter-from,
 .menu-leave-to {
 	opacity: 0;
-	transform: translateY(-20px);
+	transform: translateY(-10px);
 }
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
-@media (max-width: 650px) {
+   ========================================================= */
+@media (max-width: 600px) {
+	.menu-inner {
+		padding-top: calc(var(--header-height) + 0.5rem);
+	}
 	.nav-row {
-		grid-template-columns: 3.2rem 1fr;
-		min-height: 5.25rem;
+		grid-template-columns: 2.75rem 1fr;
+		min-height: 4rem;
 	}
 	.nav-number {
-		padding-left: 0.5rem;
-		font-size: 0.68rem;
+		font-size: 0.6rem;
 	}
 	.nav-label {
-		font-size: clamp(2rem, 9vw, 3rem);
+		font-size: 1.65rem;
 	}
 	.nav-link svg {
-		width: 20px;
-		height: 20px;
+		width: 18px;
+		height: 18px;
 	}
 	.menu-contact {
-		margin-top: 2.25rem;
-		padding-top: 1.25rem;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 0.75rem 1rem;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 0.65rem;
+		padding-top: 0.9rem;
 	}
-	.menu-contact .footer-label {
-		grid-column: 1 / -1;
-		margin-right: 0;
+	.phone-links {
+		gap: 1rem;
 	}
-	.menu-contact a {
-		font-size: 0.9rem;
+	.phone-links a {
+		font-size: 0.72rem;
 	}
 }
 </style>

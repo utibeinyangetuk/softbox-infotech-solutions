@@ -1,5 +1,4 @@
 <script setup>
-import softboxLogo from '@/assets/images/softbox-logo.png';
 import { ArrowUp, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-vue-next';
 const scrollToTop = () => {
 	window.scrollTo({
@@ -8,23 +7,14 @@ const scrollToTop = () => {
 	});
 };
 </script>
+
 <template>
 	<footer class="site-footer">
-		<div class="footer-grid"></div>
-		<div class="footer-accent"></div>
+		<div class="footer-grid-line"></div>
 		<div class="footer-inner">
-			<!-- Main footer -->
+			<!-- MAIN FOOTER -->
 			<div class="footer-main">
-				<!-- Brand -->
-				<div class="footer-brand">
-					<img :src="softboxLogo" alt="Softbox Infotech Solutions Ltd" class="footer-logo" />
-					<p class="footer-description">Business technology solutions that help organisations choose the right systems, work smarter and grow.</p>
-					<a href="#contact" class="footer-cta">
-						<span>START A CONVERSATION</span>
-						<ArrowUpRight :size="18" :stroke-width="1.5" />
-					</a>
-				</div>
-				<!-- Navigation -->
+				<!-- NAVIGATION -->
 				<div class="footer-column">
 					<span class="footer-label">
 						<small>01</small>
@@ -32,26 +22,26 @@ const scrollToTop = () => {
 					</span>
 					<a href="#home">
 						<span>Home</span>
-						<ArrowUpRight :size="15" :stroke-width="1.4" />
+						<ArrowUpRight :size="13" :stroke-width="1.5" />
 					</a>
 					<a href="#about">
 						<span>About</span>
-						<ArrowUpRight :size="15" :stroke-width="1.4" />
+						<ArrowUpRight :size="13" :stroke-width="1.5" />
 					</a>
 					<a href="#solutions">
 						<span>Solutions</span>
-						<ArrowUpRight :size="15" :stroke-width="1.4" />
+						<ArrowUpRight :size="13" :stroke-width="1.5" />
 					</a>
 					<a href="#services">
 						<span>Services</span>
-						<ArrowUpRight :size="15" :stroke-width="1.4" />
+						<ArrowUpRight :size="13" :stroke-width="1.5" />
 					</a>
 					<a href="#contact">
 						<span>Contact</span>
-						<ArrowUpRight :size="15" :stroke-width="1.4" />
+						<ArrowUpRight :size="13" :stroke-width="1.5" />
 					</a>
 				</div>
-				<!-- Solutions -->
+				<!-- SOLUTIONS -->
 				<div class="footer-column">
 					<span class="footer-label">
 						<small>02</small>
@@ -59,184 +49,132 @@ const scrollToTop = () => {
 					</span>
 					<a href="#solutions">
 						<span>Accounting Software</span>
-						<ArrowUpRight :size="15" :stroke-width="1.4" />
+						<ArrowUpRight :size="13" :stroke-width="1.5" />
 					</a>
 					<a href="#solutions">
-						<span>ERP</span>
-						<ArrowUpRight :size="15" :stroke-width="1.4" />
+						<span>Enterprise Resource Planning</span>
+						<ArrowUpRight :size="13" :stroke-width="1.5" />
 					</a>
 					<a href="#solutions">
 						<span>Inventory Software</span>
-						<ArrowUpRight :size="15" :stroke-width="1.4" />
+						<ArrowUpRight :size="13" :stroke-width="1.5" />
 					</a>
 					<a href="#solutions">
 						<span>Supermarket Software</span>
-						<ArrowUpRight :size="15" :stroke-width="1.4" />
+						<ArrowUpRight :size="13" :stroke-width="1.5" />
 					</a>
 					<a href="#solutions">
 						<span>HR Software</span>
-						<ArrowUpRight :size="15" :stroke-width="1.4" />
+						<ArrowUpRight :size="13" :stroke-width="1.5" />
 					</a>
 				</div>
-				<!-- Contact -->
+				<!-- CONTACT -->
 				<div class="footer-column contact-column">
 					<span class="footer-label">
 						<small>03</small>
 						CONTACT
 					</span>
 					<a href="tel:+2348026754712" class="contact-link">
-						<Phone :size="16" :stroke-width="1.4" />
-						<span>0802 675 4712</span>
+						<Phone :size="14" :stroke-width="1.5" />
+						<span>080 2675 4712</span>
 					</a>
 					<a href="tel:+2347031093053" class="contact-link">
-						<Phone :size="16" :stroke-width="1.4" />
-						<span>0703 109 3053</span>
+						<Phone :size="14" :stroke-width="1.5" />
+						<span>070 3109 3053</span>
 					</a>
 					<a href="#contact" class="contact-link">
-						<Mail :size="16" :stroke-width="1.4" />
+						<Mail :size="14" :stroke-width="1.5" />
 						<span>Get in touch</span>
 					</a>
 				</div>
 			</div>
-			<!-- Location -->
+			<!-- LOCATION -->
 			<a href="#contact" class="footer-location">
 				<div class="location-icon">
-					<MapPin :size="17" :stroke-width="1.4" />
+					<MapPin :size="15" :stroke-width="1.5" />
 				</div>
 				<div class="location-content">
 					<span>OUR LOCATION</span>
-					<strong> No 14, Eugene Plaza, Woji Road, Rumuogba, Port Harcourt, Nigeria </strong>
+					<strong> No. 14, Eugene Plaza, Woji Road, Rumuogba, Port Harcourt, Nigeria </strong>
 				</div>
-				<ArrowUpRight :size="18" :stroke-width="1.4" aria-hidden="true" />
+				<ArrowUpRight class="location-arrow" :size="17" :stroke-width="1.5" />
 			</a>
-			<!-- Bottom -->
+			<!-- BOTTOM -->
 			<div class="footer-bottom">
-				<span class="copyright">
+				<span>
 					© {{ new Date().getFullYear() }}
 					Softbox Infotech Solutions Ltd.
 				</span>
-				<span class="footer-mark"> PORT HARCOURT · NIGERIA </span>
+				<span class="footer-location-code"> PORT HARCOURT · NIGERIA </span>
 				<button class="back-to-top" type="button" aria-label="Back to top" @click="scrollToTop">
 					<span>BACK TO TOP</span>
-					<ArrowUp :size="16" :stroke-width="1.4" />
+					<ArrowUp :size="15" :stroke-width="1.5" />
 				</button>
 			</div>
 		</div>
 	</footer>
 </template>
+
 <style scoped>
-/* ─────────────────────────────────────────
+/* =========================================================
    FOOTER
-───────────────────────────────────────── */
+========================================================= */
 .site-footer {
 	position: relative;
-	background: var(--bg-dark);
-	color: var(--text-inverse);
+	width: 100%;
 	overflow: hidden;
-	border-top: 1px solid #25282e;
+	background: var(--bg-dark);
+	color: var(--text);
+	border-top: 1px solid var(--border);
 }
-/* Technical background */
-.footer-grid {
+/* =========================================================
+   SUBTLE BACKGROUND
+========================================================= */
+.site-footer::before {
+	content: '';
 	position: absolute;
 	inset: 0;
 	pointer-events: none;
-	opacity: 0.45;
-	background: linear-gradient(90deg, transparent 0, transparent calc(50% - 0.5px), rgba(255, 255, 255, 0.035) calc(50% - 0.5px), rgba(255, 255, 255, 0.035) 50%, transparent 50%, transparent 100%), linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+	background: linear-gradient(90deg, transparent 0, transparent calc(50% - 0.5px), rgba(255, 255, 255, 0.025) calc(50% - 0.5px), rgba(255, 255, 255, 0.025) 50%, transparent 50%, transparent 100%), linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px);
 	background-size:
 		100% 100%,
 		100% 80px;
 }
-.footer-accent {
+.footer-grid-line {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: clamp(120px, 25vw, 360px);
-	height: 2px;
+	width: 30%;
+	height: 1px;
 	background: var(--accent);
+	z-index: 2;
 }
-/* ─────────────────────────────────────────
+/* =========================================================
    INNER
-───────────────────────────────────────── */
+========================================================= */
 .footer-inner {
 	position: relative;
 	z-index: 1;
 	width: min(100%, var(--container));
 	margin: 0 auto;
-	padding: 4rem var(--page-padding) 1.5rem;
+	padding: 0 var(--page-padding);
 }
-/* ─────────────────────────────────────────
+/* =========================================================
    MAIN
-───────────────────────────────────────── */
+========================================================= */
 .footer-main {
 	display: grid;
 	grid-template-columns:
-		minmax(280px, 1.8fr)
-		repeat(3, minmax(140px, 1fr));
-	gap: clamp(2rem, 4vw, 5rem);
-	padding-bottom: 3.5rem;
-	border-bottom: 1px solid #292c32;
+		1fr
+		1.4fr
+		0.9fr;
+	gap: 3rem;
+	padding: 3.25rem 0;
+	border-bottom: 1px solid var(--border);
 }
-/* ─────────────────────────────────────────
-   BRAND
-───────────────────────────────────────── */
-.footer-brand {
-	max-width: 430px;
-}
-.brand-meta {
-	display: flex;
-	flex-direction: column;
-	gap: 0.25rem;
-	margin-bottom: 1.25rem;
-	color: #737983;
-	font-size: 0.68rem;
-	font-weight: 600;
-	letter-spacing: 0.16em;
-}
-.brand-meta span:first-child {
-	color: var(--accent);
-}
-.footer-logo {
-	display: block;
-	width: min(100%, 200px);
-	height: auto;
-	max-height: 110px;
-	object-fit: contain;
-	object-position: left center;
-	margin: 0 0 1.5rem 0;
-}
-.footer-description {
-	max-width: 390px;
-	margin: 0;
-	color: #b2b7bf;
-	font-size: 1rem;
-	line-height: 1.7;
-}
-.footer-cta {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.8rem;
-	margin-top: 2rem;
-	padding-bottom: 0.55rem;
-	border-bottom: 1px solid var(--accent);
-	color: var(--text-inverse);
-	text-decoration: none;
-	font-size: 0.78rem;
-	font-weight: 600;
-	letter-spacing: 0.1em;
-	transition:
-		color 180ms ease,
-		gap 180ms ease;
-}
-.footer-cta svg {
-	color: var(--accent);
-}
-.footer-cta:hover {
-	gap: 1.15rem;
-	color: var(--accent);
-}
-/* ─────────────────────────────────────────
+/* =========================================================
    COLUMNS
-───────────────────────────────────────── */
+========================================================= */
 .footer-column {
 	display: flex;
 	flex-direction: column;
@@ -245,217 +183,220 @@ const scrollToTop = () => {
 .footer-label {
 	display: flex;
 	align-items: center;
-	gap: 0.7rem;
-	margin-bottom: 1.25rem;
-	color: #737983;
-	font-size: 0.72rem;
-	font-weight: 600;
-	letter-spacing: 0.12em;
+	gap: 0.6rem;
+	margin-bottom: 1.1rem;
+	color: var(--text-muted);
+	font-size: 0.6rem;
+	font-weight: 700;
+	letter-spacing: 0.13em;
 }
 .footer-label small {
 	color: var(--accent);
 	font-family: monospace;
-	font-size: 0.72rem;
-	font-weight: 600;
+	font-size: 0.6rem;
 }
+/* =========================================================
+   LINKS
+========================================================= */
 .footer-column > a {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 1rem;
 	width: 100%;
-	max-width: 220px;
-	padding: 0.55rem 0;
-	border-bottom: 1px solid transparent;
-	color: #aeb3bb;
-	text-decoration: none;
-	font-size: 0.92rem;
+	max-width: 280px;
+	padding-block: 0.4rem;
+	color: var(--text-secondary);
+	font-size: 0.76rem;
 	line-height: 1.4;
+	text-decoration: none;
 	transition:
-		color 180ms ease,
-		padding-left 180ms ease,
-		border-color 180ms ease;
+		color 0.2s ease,
+		padding-left 0.2s ease;
 }
 .footer-column > a svg {
-	flex-shrink: 0;
 	opacity: 0;
 	color: var(--accent);
 	transform: translate(-4px, 4px);
 	transition:
-		opacity 180ms ease,
-		transform 180ms ease;
+		opacity 0.2s ease,
+		transform 0.2s ease;
 }
 .footer-column > a:hover {
-	padding-left: 0.35rem;
-	color: var(--text-inverse);
-	border-bottom-color: #292c32;
+	padding-left: 0.25rem;
+	color: var(--text);
 }
 .footer-column > a:hover svg {
 	opacity: 1;
 	transform: translate(0, 0);
 }
-/* Contact links */
+/* =========================================================
+   CONTACT LINKS
+========================================================= */
 .contact-column .contact-link {
 	justify-content: flex-start;
-	gap: 0.7rem;
+	gap: 0.6rem;
 }
 .contact-column .contact-link svg {
+	flex-shrink: 0;
 	opacity: 1;
-	transform: none;
 	color: var(--accent);
+	transform: none;
 }
 .contact-column .contact-link:hover svg {
-	color: var(--text-inverse);
+	color: var(--accent-hover);
 }
-/* ─────────────────────────────────────────
+/* =========================================================
    LOCATION
-───────────────────────────────────────── */
+========================================================= */
 .footer-location {
 	display: grid;
-	grid-template-columns: auto 1fr auto;
+	grid-template-columns: auto minmax(0, 1fr) auto;
 	align-items: center;
-	gap: 1.2rem;
-	padding: 1.75rem 0;
-	border-bottom: 1px solid #292c32;
-	color: #aeb3bb;
+	gap: 1rem;
+	padding: 1.3rem 0;
+	color: var(--text-secondary);
+	border-bottom: 1px solid var(--border);
 	text-decoration: none;
-	transition: color 180ms ease;
+	transition: color 0.2s ease;
 }
 .location-icon {
 	display: grid;
 	place-items: center;
-	width: 38px;
-	height: 38px;
-	border: 1px solid #383c43;
+	width: 32px;
+	height: 32px;
+	border: 1px solid var(--border);
 	color: var(--accent);
+	transition:
+		border-color 0.2s ease,
+		background 0.2s ease;
 }
 .location-content {
 	display: flex;
 	flex-direction: column;
-	gap: 0.4rem;
+	gap: 0.3rem;
 }
 .location-content span {
-	color: #737983;
-	font-size: 0.7rem;
-	font-weight: 600;
-	letter-spacing: 0.13em;
+	color: var(--text-muted);
+	font-size: 0.56rem;
+	font-weight: 700;
+	letter-spacing: 0.15em;
 }
 .location-content strong {
-	color: #d2d5da;
-	font-size: 0.95rem;
-	font-weight: 450;
+	color: var(--text-secondary);
+	font-size: 0.76rem;
+	font-weight: 500;
 	line-height: 1.5;
 }
-.footer-location > svg {
+.location-arrow {
 	color: var(--accent);
-	transition: transform 180ms ease;
+	transition: transform 0.2s ease;
 }
 .footer-location:hover {
-	color: var(--text-inverse);
+	color: var(--text);
 }
-.footer-location:hover > svg {
+.footer-location:hover .location-icon {
+	border-color: var(--accent);
+	background: var(--accent-soft);
+}
+.footer-location:hover .location-content strong {
+	color: var(--text);
+}
+.footer-location:hover .location-arrow {
 	transform: translate(3px, -3px);
 }
-/* ─────────────────────────────────────────
+/* =========================================================
    BOTTOM
-───────────────────────────────────────── */
+========================================================= */
 .footer-bottom {
 	display: grid;
 	grid-template-columns: 1fr auto 1fr;
 	align-items: center;
 	gap: 1rem;
-	padding-top: 1.25rem;
-	color: #737983;
-	font-size: 0.72rem;
-	line-height: 1.5;
+	padding: 1.1rem 0;
+	color: var(--text-muted);
+	font-size: 0.6rem;
+	letter-spacing: 0.05em;
 }
-.footer-mark {
-	color: #737983;
-	font-size: 0.68rem;
-	font-weight: 600;
-	letter-spacing: 0.1em;
+.footer-location-code {
+	justify-self: center;
 }
 .back-to-top {
 	display: inline-flex;
 	align-items: center;
 	justify-content: flex-end;
-	gap: 0.7rem;
 	justify-self: end;
+	gap: 0.6rem;
 	padding: 0;
 	border: 0;
 	background: transparent;
-	color: #aeb3bb;
+	color: var(--text-secondary);
 	cursor: pointer;
-	font: inherit;
-	font-size: 0.72rem;
-	font-weight: 600;
+	font-family: inherit;
+	font-size: 0.6rem;
 	letter-spacing: 0.08em;
-	transition: color 180ms ease;
+	transition: color 0.2s ease;
 }
 .back-to-top svg {
 	color: var(--accent);
-	transition: transform 180ms ease;
+	transition: transform 0.2s ease;
 }
 .back-to-top:hover {
-	color: var(--text-inverse);
+	color: var(--text);
 }
 .back-to-top:hover svg {
 	transform: translateY(-3px);
 }
-/* ─────────────────────────────────────────
+/* =========================================================
    TABLET
-───────────────────────────────────────── */
-@media (max-width: 950px) {
-	.footer-main {
-		grid-template-columns: 1.5fr 1fr 1fr;
-		gap: 2.5rem;
-	}
-	.footer-brand {
-		grid-column: 1 / -1;
-		max-width: 560px;
-	}
-}
-/* ─────────────────────────────────────────
-   MOBILE
-───────────────────────────────────────── */
-@media (max-width: 640px) {
-	.footer-inner {
-		padding-top: 3rem;
-	}
+========================================================= */
+@media (max-width: 800px) {
 	.footer-main {
 		grid-template-columns: 1fr 1fr;
-		gap: 2.5rem 1.5rem;
-		padding-bottom: 2.75rem;
+		gap: 2.5rem;
 	}
-	.footer-brand {
+	.contact-column {
 		grid-column: 1 / -1;
 	}
-	.footer-logo {
-		width: 100%;
-		max-width: 300px;
-		max-height: none;
+}
+/* =========================================================
+   MOBILE
+========================================================= */
+@media (max-width: 560px) {
+	.footer-main {
+		grid-template-columns: 1fr;
+		gap: 0;
+		padding: 2.5rem 0;
 	}
-	.footer-description {
-		font-size: 0.95rem;
+	.footer-column {
+		width: 100%;
+		padding: 1.5rem 0;
+		border-top: 1px solid var(--border);
+	}
+	.footer-column:first-child {
+		padding-top: 0;
+		border-top: 0;
 	}
 	.footer-column > a {
-		font-size: 0.88rem;
+		max-width: 100%;
+	}
+	.contact-column {
+		grid-column: auto;
 	}
 	.footer-location {
-		grid-template-columns: auto 1fr;
-		gap: 1rem;
+		grid-template-columns: auto minmax(0, 1fr);
 	}
-	.footer-location > svg {
+	.location-arrow {
 		display: none;
 	}
 	.location-content strong {
-		font-size: 0.9rem;
+		font-size: 0.7rem;
 	}
 	.footer-bottom {
 		grid-template-columns: 1fr auto;
-		gap: 1rem;
+		gap: 0.75rem;
+		padding: 1rem 0;
 	}
-	.footer-mark {
+	.footer-location-code {
 		display: none;
 	}
 	.back-to-top {
@@ -463,26 +404,10 @@ const scrollToTop = () => {
 		grid-row: 1;
 	}
 }
-/* ─────────────────────────────────────────
+/* =========================================================
    SMALL MOBILE
-───────────────────────────────────────── */
-@media (max-width: 430px) {
-	.footer-main {
-		grid-template-columns: 1fr;
-		gap: 0;
-	}
-	.footer-column {
-		width: 100%;
-		padding: 1.5rem 0;
-		border-top: 1px solid #292c32;
-	}
-	.footer-column > a {
-		max-width: 100%;
-		font-size: 0.92rem;
-	}
-	.footer-description {
-		font-size: 0.95rem;
-	}
+========================================================= */
+@media (max-width: 400px) {
 	.footer-bottom {
 		grid-template-columns: 1fr;
 	}

@@ -19,7 +19,7 @@ defineProps({
 
 <template>
 	<div class="section-label" :class="`accent-${accent}`">
-		<span>§ {{ number }}</span>
+		<span>{{ number }}</span>
 
 		<p>{{ title }}</p>
 	</div>
